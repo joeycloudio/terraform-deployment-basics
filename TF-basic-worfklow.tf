@@ -8,7 +8,7 @@ variable "bucket_name" {
   type = string
 }
 
-#terraform.tfvars
+#terraform.tfvars is for real environments (dev, prod) and resources stay deployed
 bucket_name = "my-company-prod-logs"
 
 #you run
