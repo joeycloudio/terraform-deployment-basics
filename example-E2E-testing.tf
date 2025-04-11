@@ -1,4 +1,5 @@
 EXAMPLE END-TO-END TEST USING TF TEST FRAMEWORK
+WOULD ALSO NEED THIRD VARIABLES.TF FILE
 
 #in terraform you leverage apply command
 #below is basic test
