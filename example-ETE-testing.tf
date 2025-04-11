@@ -19,7 +19,8 @@ resource "aws_codecommit_repository" "codecommit" {
 # 2 - check the resources based on your assertions
 # 3 - then run terraform destroy to remove the test resources and clean up
 
-# example file is example.tftest.hcl
+# example file is example.tftest.hcl 👈 runs terraform apply in a temp test workspace, does assertions, then runs terraform destory automatically
+# runs in a sandbox test workspace
 ------------------------------------
 variables {
   repo_name = "MyRepo"
