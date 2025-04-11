@@ -39,3 +39,20 @@ run "e2e-test"{
 # once code commit repo is created ...
 # assertion will do a check based on the condition
 # if true, test will pass, if fals test will fail and error message will be thrown
+
+# would be using the above with terraform test
+
+USE A SEPARATE TEST AWS ACCOUNT OR REGION SO TEST INFRA CAN'T COLLIDE WITH REAL INFRA
+USE FAKE NAMES IN TESTS, NEVER USE REAL PROD INPUTS IN TESTS
+DOUBLE CHECK VARIABLES IN TEST FILE AND MAKE SURE YOU'RE PASSING SAFE, ISOLATED VALUES
+
+FOR EXAMPLE
+if test file has a variable like
+variables {
+  repo_name = "prod-shared-codecommit"
+}
+
+and you try to test it, but there is an actual repo with that name already
+terraform apply tries to create it and would fail or overwrite it
+then terraform destroy will delete the real production repo
+you'd accidentally blow up prod by running a test
