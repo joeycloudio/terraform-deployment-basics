@@ -13,4 +13,4 @@ bucket_name = "my-company-prod-logs"
 
 #you run
 terraform init
-terraform apply -var-file="terraform.tfvars"
+terraform apply -var-file="terraform.tfvars" # 👈 applies your infra using the values inside .tfvars, does not do assertions, does not destroy
